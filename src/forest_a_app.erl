@@ -12,7 +12,8 @@
 start(_StartType, _StartArgs) ->
     Dispatch = cowboy_router:compile([
         {'_', [
-            {"/", customer_request_h, []}
+            {"/", customer_request_h, []},
+            {"/update_price", update_price_h, []}
         ]}
     ]),
     cowboy:start_clear(
