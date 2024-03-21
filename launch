@@ -4,4 +4,4 @@ if [ -z "$1" ]; then
     echo "Usage: you must enter the name for the node. "
     exit 1
 fi
-sudo rebar3 shell --sname $1@64.23.138.34 --setcookie forest
+sudo rebar3 shell --name $1@64.23.138.34 --setcookie forest
