@@ -13,7 +13,7 @@ init(Req0, Opts) ->
     %%items in quotes
     Price_List = jsx:decode(Data),
     % io:format("~p~n",[Price_List]),
-    Price_Data = erpc:call('b@64.23.134.161',customer_request_server,get_prices_of,[Price_List]),
+    Price_Data = erpc:call('b@64.23.134.161',crs1,get_prices_of,[Price_List]),
     % io:format("~p~n",[Price_Data]),
     Response = jsx:encode(Price_Data),
     Req = cowboy_req:reply(200, #{
