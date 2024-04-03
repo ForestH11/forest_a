@@ -14,7 +14,7 @@ init(Req0, Opts) ->
     Price_list = jsx:decode(Data),
     % io:format("~p~n",[Price_list]),
     % Price_data = erpc:call('b@64.23.134.161',customer_request_server,get_prices_of,[Price_list]),
-    Price_data = erpc:call('b@64.23.134.161', dispatch, customer,[Price_list]),
+    Price_data = erpc:call('b@64.23.134.161', dispatch, customer_request,[Price_list]),
     % io:format("~p~n",[Price_data]),
     Response = jsx:encode(Price_data),
     Req = cowboy_req:reply(200, #{
